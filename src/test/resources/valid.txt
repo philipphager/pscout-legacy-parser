@@ -1,0 +1,7 @@
+Permission:android.permission.CHANGE_WIFI_STATE
+2 Callers:
+<android.net.wifi.WifiManager: boolean reassociate()>
+<android.net.wifi.p2p.WifiP2pManager: android.net.wifi.p2p.WifiP2pManager$Channel initialize(android.content.Context,android.os.Looper,android.net.wifi.p2p.WifiP2pManager$ChannelListener)>
+Permission:android.permission.READ_PHONE_STATE
+1 Callers:
+<android.telephony.TelephonyManager: java.lang.String getSubscriberId()>

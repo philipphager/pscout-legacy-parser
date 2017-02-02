@@ -1,0 +1,3 @@
+<android.net.wifi.WifiManager: boolean reassociate()>
+<android.net.wifi.WifiManager: boolean startScan()>
+<android.net.wifi.WifiManager: void setCountryCode(java.lang.String,boolean)>
