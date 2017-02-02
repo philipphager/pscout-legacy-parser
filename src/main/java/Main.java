@@ -9,14 +9,14 @@ public class Main {
     }
 
     File inFile = new File(args[0]);
-    File outFile = new File(String.format("%s%sprotected-methods.txt", args[1], File.separator));
+    File outFile = new File(String.format("%s%sprotected-methods.csv", args[1], File.separator));
 
     if (!inFile.exists()) {
       throw new IllegalArgumentException("Must provide valid path to Pscout file");
     }
 
     // Change for CSV, SQL, or Java SQLite output.
-    FormattedFileExport exporter = new SQLiteFileExport(new FileUtils());
+    FormattedFileExport exporter = new CSVFileExport(new FileUtils());
 
     FileParser fileParser = new FileParser(inFile);
     List<Method> methods = fileParser.extractMethods();
