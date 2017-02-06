@@ -5,4 +5,4 @@ PScout is a tool to analyze the Android system and to create a mapping for syste
 The output format of the PScout 1 parser is quite strange, so this parser aims to convert PScout 1 output files to CSV files with [smali](https://github.com/JesusFreke/smali) compatible types.
 
 ## Current Mappings:
-- [PScout Android 4.1.1, CSV](https://raw.githubusercontent.com/philipphager/pscout-parser/master/export/protected-methods.csv?token=AIuzK9-5NGPaxedyStaIdjUINWAXLE0Cks5YnFJQwA%3D%3D)
+- [PScout API 22, Android 5.1, CSV](https://raw.githubusercontent.com/philipphager/pscout-parser/master/export/protected-methods.csv)
