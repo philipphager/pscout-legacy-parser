@@ -6,3 +6,9 @@ The output format of the PScout 1 parser is quite strange, so this parser aims t
 
 ## Current Mappings:
 - [PScout API 22, Android 5.1, CSV](https://raw.githubusercontent.com/philipphager/pscout-parser/master/export/protected-methods.csv)
+
+## Build the project
+1. Clone / Download the project
+2. cd into the project directory
+3. Run `./gradlew assemble` to build the project. The executable .jar will be located in `/build/libs`
+4. Run the tool with `java -jar ./build/libs/pscout-parser-0.1.jar -i path/to/your/pscout1/file.txt -o /path/to/the/output/directory`. Just provide the parameters -i for the pscout input file and -o for the output directory for the parsed .csv file.
