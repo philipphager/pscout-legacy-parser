@@ -1,19 +1,47 @@
+import com.beust.jcommander.JCommander;
+import com.beust.jcommander.Parameter;
 import java.io.File;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Main {
+  @Parameter(names = {"--pscoutInput",
+      "-i"}, required = true, description = "Path to your PScout legacy file.")
+  String pscoutInputFile;
+
+  @Parameter(names = {"--outputDir",
+      "-o"}, required = true, description = "Path to your output directory.")
+  String outputDir;
+
+  @Parameter(names = {"--help", "-h"})
+  private boolean help = false;
+
   public static void main(String[] args) {
-    if (args.length != 2) {
-      throw new IllegalArgumentException("Provide pscout file and output directory");
-    }
+    Main main = new Main();
+    JCommander jCommander = new JCommander(main);
 
-    File inFile = new File(args[0]);
-    File outFile = new File(String.format("%s%sprotected-methods.csv", args[1], File.separator));
+    try {
+      jCommander.parse(args);
 
-    if (!inFile.exists()) {
-      throw new IllegalArgumentException("Must provide valid path to Pscout file");
+      if (main.help) {
+        jCommander.usage();
+        return;
+      }
+
+      main.run();
+    } catch (Exception e) {
+      jCommander.usage();
     }
+  }
+
+  public void run() {
+    File inFile = new File(pscoutInputFile);
+    File outDir = new File(outputDir);
+
+    Assertions.assertTrue(inFile.exists(), "Please provide a valid input file!");
+    Assertions.assertTrue(outDir.exists(), "Please provide a valid output directory!");
+
+    File outFile = new File(String.format("%s%spscout-mapping.csv", outputDir, File.separator));
 
     // Change for CSV, SQL, or Java SQLite output.
     FormattedFileExport exporter = new CSVFileExport(new FileUtils());
