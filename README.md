@@ -9,7 +9,12 @@ The output format of the PScout 1 parser is quite strange, so this parser aims t
 ## Current Mappings:
 - [PScout API 22, Android 5.1, CSV](https://raw.githubusercontent.com/philipphager/pscout-parser/master/export/protected-methods.csv)
 
+## Download Tool
+If you want to run the tool as an executable .jar yourself, just go to the [release](https://github.com/philipphager/pscout-legacy-parser/releases) page and download the latest version.
+
 ## Build the project
+If you want to build the project yourself, follow these instructions. If you make changes and improvements you are very welcome to file a pull request to this repository. 
+
 1. Clone / Download the project
 2. cd into the project directory
 3. Run `./gradlew assemble` to build the project. The executable .jar will be located in `/build/libs`
